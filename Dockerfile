@@ -27,7 +27,10 @@ COPY ./Docker/supervisord.conf /etc/supervisord.conf
 EXPOSE 8000
 
 
-CMD php artisan config:cache && \
-    php artisan route:cache && \
+CMD php artisan config:clear && \
+    php artisan route:clear && \
+    php artisan view:clear && \
+    php artisan cache:clear && \
+    composer dump-autoload --optimize && \
     php artisan migrate --force && \
     /usr/bin/supervisord -c /etc/supervisord.conf
