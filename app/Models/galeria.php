@@ -12,9 +12,8 @@ class Galeria extends Model
     use HasFactory;
 
     protected $table = 'imagenes';
-
     protected $primaryKey = 'id_imagen'; 
-     public $timestamps = true;
+    public $timestamps = true;
 
     protected $fillable = [
         'id_mascota',
