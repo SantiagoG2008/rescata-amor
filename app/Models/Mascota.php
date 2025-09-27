@@ -5,10 +5,6 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
-use App\Models\Raza;
-use App\Models\Estado;
-use App\Models\DetalleCondicion;
-use App\Models\HistoriaClinica;
 
 class Mascota extends Model
 {
@@ -32,10 +28,10 @@ class Mascota extends Model
         'condicion_id'
     ];
 
-    // public function raza()
-    // {
-    //     return $this->belongsTo('App\Models\Raza', 'raza_id', 'id_raza');
-    // }
+    public function raza()
+    {
+        return $this->belongsTo('App\Models\Raza', 'raza_id', 'id_raza');
+    }
 
     public function estado()
     {
