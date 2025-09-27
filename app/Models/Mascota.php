@@ -5,6 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
+use App\Models\Raza;
+use App\Models\Estado;
+use App\Models\DetalleCondicion;
+use App\Models\HistoriaClinica;
 
 class Mascota extends Model
 {

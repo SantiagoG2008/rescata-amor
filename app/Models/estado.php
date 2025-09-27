@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Mascota;
 
 class Estado extends Model
 {
@@ -11,8 +12,8 @@ class Estado extends Model
     public $timestamps = false;
     protected $fillable = ['descripcion'];
 
-    public function estado()
-{
-    return $this->belongsTo(Estado::class, 'estado_id', 'id_estado');
-}
+    public function mascotas()
+    {
+        return $this->hasMany(Mascota::class, 'estado_id', 'id_estado');
+    }
 }
