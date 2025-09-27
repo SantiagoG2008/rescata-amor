@@ -32,10 +32,10 @@ class Mascota extends Model
         'condicion_id'
     ];
 
-    public function raza()
-    {
-        return $this->belongsTo('App\Models\Raza', 'raza_id', 'id_raza');
-    }
+    // public function raza()
+    // {
+    //     return $this->belongsTo('App\Models\Raza', 'raza_id', 'id_raza');
+    // }
 
     public function estado()
     {
