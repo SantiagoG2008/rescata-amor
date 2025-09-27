@@ -20,17 +20,11 @@ RUN mkdir -p storage/framework/sessions \
 
 RUN composer install --no-dev --optimize-autoloader --no-interaction
 
-
 COPY ./Docker/nginx.conf /etc/nginx/conf.d/default.conf
 COPY ./Docker/supervisord.conf /etc/supervisord.conf
+COPY ./docker-entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 
 EXPOSE 8000
 
-
-CMD php artisan config:clear && \
-    php artisan route:clear && \
-    php artisan view:clear && \
-    php artisan cache:clear && \
-    composer dump-autoload --optimize && \
-    php artisan migrate --force && \
-    /usr/bin/supervisord -c /etc/supervisord.conf
+ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
