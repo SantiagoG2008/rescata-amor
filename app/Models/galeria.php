@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
+use App\Models\Mascota;
 
 class Galeria extends Model
 {
@@ -23,7 +24,7 @@ class Galeria extends Model
 
     public function mascota()
     {
-        return $this->belongsTo('App\Models\Mascota', 'id_mascota');
+        return $this->belongsTo(Mascota::class, 'id_mascota');
     }
 
     // URL absoluta de la imagen en galería

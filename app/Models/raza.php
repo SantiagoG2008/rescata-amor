@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Mascota;
 
 class Raza extends Model
 {
@@ -13,6 +14,6 @@ class Raza extends Model
 
     public function mascotas()
     {
-        return $this->hasMany('App\Models\Mascota', 'raza_id', 'id_raza');
+        return $this->hasMany(Mascota::class, 'raza_id', 'id_raza');
     }
 }

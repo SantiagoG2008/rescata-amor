@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Mascota;
 
 class HistoriaClinica extends Model
 {
@@ -24,6 +25,6 @@ class HistoriaClinica extends Model
 
     public function mascota()
     {
-        return $this->belongsTo('App\Models\Mascota', 'id_mascota');
+        return $this->belongsTo(Mascota::class, 'id_mascota');
     }
 }
