@@ -14,6 +14,6 @@ class Estado extends Model
 
     public function mascotas()
     {
-        return $this->hasMany(Mascota::class, 'estado_id', 'id_estado');
+        return $this->hasMany('App\Models\Mascota', 'estado_id', 'id_estado');
     }
 }

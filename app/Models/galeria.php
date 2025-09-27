@@ -24,7 +24,7 @@ class Galeria extends Model
 
     public function mascota()
     {
-        return $this->belongsTo(Mascota::class, 'id_mascota');
+        return $this->belongsTo('App\Models\Mascota', 'id_mascota');
     }
 
     // URL absoluta de la imagen en galería

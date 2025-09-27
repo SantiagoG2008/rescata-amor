@@ -34,21 +34,21 @@ class Mascota extends Model
 
     public function raza()
     {
-        return $this->belongsTo(Raza::class, 'raza_id', 'id_raza');
+        return $this->belongsTo('App\Models\Raza', 'raza_id', 'id_raza');
     }
 
     public function estado()
     {
-        return $this->belongsTo(Estado::class, 'estado_id', 'id_estado');
+        return $this->belongsTo('App\Models\Estado', 'estado_id', 'id_estado');
     }
 
     public function condicion()
     {
-        return $this->belongsTo(DetalleCondicion::class, 'condicion_id', 'id_condicion');
+        return $this->belongsTo('App\Models\DetalleCondicion', 'condicion_id', 'id_condicion');
     }
     public function historiasClinicas()
 {
-    return $this->hasMany(HistoriaClinica::class, 'id_mascota');
+    return $this->hasMany('App\Models\HistoriaClinica', 'id_mascota');
 }
 
     // URL absoluta de la imagen lista para <img src>

@@ -14,6 +14,6 @@ class Raza extends Model
 
     public function mascotas()
     {
-        return $this->hasMany(Mascota::class, 'raza_id', 'id_raza');
+        return $this->hasMany('App\Models\Mascota', 'raza_id', 'id_raza');
     }
 }

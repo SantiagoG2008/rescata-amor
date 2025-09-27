@@ -25,6 +25,6 @@ class HistoriaClinica extends Model
 
     public function mascota()
     {
-        return $this->belongsTo(Mascota::class, 'id_mascota');
+        return $this->belongsTo('App\Models\Mascota', 'id_mascota');
     }
 }

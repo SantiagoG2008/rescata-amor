@@ -14,6 +14,6 @@ class DetalleCondicion extends Model
 
     public function mascotas()
     {
-        return $this->hasMany(Mascota::class, 'condicion_id', 'id_condicion');
+        return $this->hasMany('App\Models\Mascota', 'condicion_id', 'id_condicion');
     }
 }
